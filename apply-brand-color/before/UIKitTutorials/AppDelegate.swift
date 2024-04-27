@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SendbirdUIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let APP_ID = "YOUR_APP_ID"    // TODO: Specify your Sendbird application ID.
+
+        SendbirdUI.initialize(
+            applicationId: APP_ID
+        ) { params in
+            // This is the builder block where you can modify the initParameter.
+            //
+            // [example]
+            // params.needsSynchronous = false
+        } startHandler: {
+            // This is the origin.
+            // Initialization of SendbirdUIKit has started.
+            // We recommend showing a loading indicator once started.
+        } migrationHandler: {
+            // DB migration has started.
+        } completionHandler: { error in
+            // If DB migration is successful, proceed to the next step.
+            // If DB migration fails, an error exists.
+            // We recommend hiding the loading indicator once done.
+        }
+        
+        SBUGlobals.currentUser = SBUUser(userId: "USER_ID") // TODO: Specify your user ID.
+
         return true
     }
 
