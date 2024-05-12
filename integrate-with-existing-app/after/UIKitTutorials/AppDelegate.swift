@@ -14,15 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let APP_ID = "YOUR_APP_ID"    // TODO: Specify your Sendbird application ID.
-
+        let APP_ID = "EF50A7F2-48D7-4EAF-9778-503A0039CB79"    // Specify your Sendbird application ID.
+        
         SendbirdUI.initialize(
             applicationId: APP_ID
         ) { params in
             // This is the builder block where you can modify the initParameter.
             //
             // [example]
-            // params.needsSynchronous = false
+            // params?.needsSynchronous = false
         } startHandler: {
             // This is the origin.
             // Initialization of SendbirdUIKit has started.
@@ -34,18 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // If DB migration fails, an error exists.
             // We recommend hiding the loading indicator once done.
         }
-        
-        SBUGlobals.currentUser = SBUUser(userId: "USER_ID") // TODO: Specify your user ID.
-        
-        SBUColorSet.primary100 = UIColor(red: 168/255, green: 226/255, blue: 171/255, alpha: 1)
-        SBUColorSet.primary200 = UIColor(red: 105/255, green: 192/255, blue: 133/255, alpha: 1)
-        SBUColorSet.primary300 = UIColor(red: 38/255, green: 156/255, blue: 114/255, alpha: 1)
-        SBUColorSet.primary400 = UIColor(red: 2/255, green: 125/255, blue: 105/255, alpha: 1)
-        SBUColorSet.primary500 = UIColor(red: 6/255, green: 104/255, blue: 88/255, alpha: 1)
-        
-        let channelTheme = SBUGroupChannelListTheme(navigationBarTintColor: .systemRed)
-        let newTheme = SBUTheme(groupChannelListTheme: channelTheme)
-        SBUTheme.set(theme: newTheme)
+        // Override point for customization after application launch.
 
         return true
     }
