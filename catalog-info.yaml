@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Code examples for sendbird-uikit-ios tutorials
+  description: Code examples for sendbird-uikit-ios tutorials
+  annotations:
+    github.com/project-slug: sendbird/sendbird-uikit-ios-tutorials
+spec:
+  type: library
+  lifecycle: production
+  owner: team_developer_advocates
+  system: sendbird-uikit

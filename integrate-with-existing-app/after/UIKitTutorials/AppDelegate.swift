@@ -7,6 +7,7 @@
 
 import UIKit
 import SendbirdUIKit
+import SendbirdChatSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let APP_ID = "EF50A7F2-48D7-4EAF-9778-503A0039CB79"    // Specify your Sendbird application ID.
+        let APP_ID = "YOUR_APP_ID"    // Specify your Sendbird application ID.
         
         SendbirdUI.initialize(
             applicationId: APP_ID
